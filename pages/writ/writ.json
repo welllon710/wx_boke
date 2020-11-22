@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "my-input":"/components/my_input/my_input",
+    "select-down":"/components/select_down/select_down",
+    "my-button":"/components/my_button/my_button"
+
+  },
+  "navigationBarTitleText": "文章"
+}

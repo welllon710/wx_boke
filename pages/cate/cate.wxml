@@ -1,0 +1,8 @@
+<!-- 头部组件 -->
+<tabs list="{{list}}" bind:cate="cate" ></tabs>
+<!-- 内容 -->
+<view class="content">
+  <block wx:for="{{5}}" wx:key="{{index}}">
+    <content bind:get_detail="get_detail"></content>
+  </block>
+</view>

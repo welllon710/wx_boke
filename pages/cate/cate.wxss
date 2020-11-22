@@ -1,0 +1,4 @@
+.content{
+  padding: 0 20rpx;
+  margin-top: 90rpx;
+}

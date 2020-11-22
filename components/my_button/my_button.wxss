@@ -1,0 +1,4 @@
+/* components/my_button/my_button.wxss */
+.my_button{
+  margin: 20rpx 0;
+}

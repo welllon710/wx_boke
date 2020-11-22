@@ -1,0 +1,17 @@
+/* components/my_input/my_input.wxss */
+.my_input{
+  height: 100%;
+  margin: 24rpx 0;
+}
+h5{
+  font-size: 40rpx;
+  padding: 15rpx;
+  color: #293a46;
+}
+.input_item{
+  height: 80rpx;
+  width: 100%;
+  
+  border-bottom: 2rpx solid #293a46;
+  padding-left: 10rpx;
+}

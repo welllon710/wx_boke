@@ -1,0 +1,53 @@
+/* components/select_down/select_down.wxss */
+.box{
+  display: flex;
+}
+.right{
+  flex: 1;
+  font-size: 40rpx;
+  padding-left: 10rpx;
+  color: #293a46;
+  position: relative;
+  top: 21rpx;
+}
+.left{
+  flex: 4;
+  position: relative;
+  top: 15rpx;
+}
+.select{
+  width: 99%;
+  height: 80rpx;
+  border: 2rpx solid #293a46;
+  margin: 0 auto;
+  border-top-left-radius: 10rpx;
+  border-top-right-radius: 10rpx;
+}
+text{
+  line-height: 80rpx;
+  padding-left:10rpx;
+}
+.select_box{
+  width: 99%;
+  height: 200rpx;
+  border: 2rpx solid black;
+  margin: 0 auto;
+  border-top: none;
+  position: absolute;
+  z-index: 10;
+}
+.select_box .select_item{
+  height: 80rpx;
+  width: 100%;
+  line-height: 80rpx;
+ 
+}
+.active{
+  color: red;
+}
+.care{
+  background-color: #e6e6e6;
+}
+.cate{
+  background-color: #f3f3f3;
+}

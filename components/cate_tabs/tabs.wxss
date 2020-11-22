@@ -1,0 +1,26 @@
+/* components/cate/tabs.wxss */
+.tab-h {
+  height: 80rpx;
+  width: 100%;
+   box-sizing: border-box;
+   overflow: hidden;
+   line-height: 80rpx;
+   background: #F7F7F7;
+    font-size: 40rpx; 
+    white-space: nowrap;
+    position: fixed;top: 0; left: 0; 
+    z-index: 99;
+    display: flex;
+  }
+  
+.tab-h .tab-item {
+  line-height: 90rpx;
+  text-align: center;
+  margin: 0 30rpx;
+ color:#293a46;
+}
+.tab-item.active{
+  color: #4675F9;
+  position: relative;
+  border-bottom: 4rpx solid #008CD6;
+}

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "tabs":"../../components/cate_tabs/tabs",
+    "content":"../../components/cate_content/cate_item"
+  },
+  "navigationBarTitleText": "栏目分类"
+}

@@ -1,0 +1,19 @@
+<!--pages/writ/writ.wxml-->
+<text>ps:准备好写一篇文章了吗？那来写吧</text>
+<my-input title="标题"></my-input>
+<my-input title="概要"></my-input>
+<my-input title="标签"></my-input>
+<!-- 下拉框 -->
+<select-down></select-down>
+<!--是否置顶 -->
+<view class="_switch">
+  <h5>是否置顶:</h5>
+<switch type="switch" class="switch_item" ></switch>
+</view>
+<!-- 富文本 -->
+<h5>内容:</h5>
+<textarea class="_text" maxlength="-1" 
+placeholder="就在这里写你的心得吧"
+></textarea>
+<!-- 按钮 -->
+<my-button></my-button>

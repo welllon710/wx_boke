@@ -1,0 +1,49 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/cate/cate",
+    "pages/writ/writ",
+    "pages/home/home",
+    "pages/detail/detail"
+  ],
+  "window":{
+    "navigationBarBackgroundColor": "#008CD6"
+   
+  },
+  "tabBar": {
+    "selectedColor": "#008CD6",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/static/tabbar/home.png",
+        "selectedIconPath": "/static/tabbar/select_home.png"
+        
+      },
+      {
+        "pagePath": "pages/cate/cate",
+        "text": "分类",
+        "iconPath": "/static/tabbar/cate.png",
+        "selectedIconPath": "/static/tabbar/select_cate.png"
+      },
+      {
+        "pagePath": "pages/writ/writ",
+        "text": "文章",
+        "iconPath": "/static/tabbar/article.png",
+        "selectedIconPath": "/static/tabbar/select_article.png"
+      },
+      {
+        "pagePath": "pages/home/home",
+        "text": "关于",
+        "iconPath": "/static/tabbar/my.png",
+        "selectedIconPath": "/static/tabbar/select_my.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "useExtendedLib": {
+    "kbone": true,
+    "weui":true
+  }
+}

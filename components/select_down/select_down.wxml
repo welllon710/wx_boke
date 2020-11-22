@@ -1,0 +1,22 @@
+<!--components/select_down/select_down.wxml-->
+<view class="box">
+  <view class="right">分类:</view>
+<view class="left">
+  <view class="select" bindtap="handleshow">
+  <text>{{content}}</text>
+  </view>
+  <block wx:if="{{isShow}}">
+  <scroll-view scroll-y scroll-top class="select_box" >
+    <block wx:for="{{5}}" >
+      <view class="select_item {{index % 2 === 0? 'care':'cate'}}" 
+      bindtap="handletap"
+      data-index="{{index}}"
+      data-value="{{item}}"
+      hover-class="{{index === current? 'active':''}}">2</view>
+    </block>
+  </scroll-view>
+</block>
+</view>
+</view>
+
+

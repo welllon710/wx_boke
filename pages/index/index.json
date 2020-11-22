@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "cate-tabs":"/components/cate_tabs/tabs"
+  },
+  "navigationBarTitleText": "首页"
+}
