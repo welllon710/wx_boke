@@ -1,19 +1,28 @@
-<!--pages/writ/writ.wxml-->
+
 <text>ps:准备好写一篇文章了吗？那来写吧</text>
-<my-input title="标题"></my-input>
-<my-input title="概要"></my-input>
-<my-input title="标签"></my-input>
+<form 
+method="post" 
+bindsubmit="formSubmit"
+bindreset="formReset"
+>
+<my-input title="标题" name="title">
+
+</my-input>
+<my-input title="概要" name="desc"></my-input>
+<my-input title="标签" name="tags"></my-input>
 <!-- 下拉框 -->
-<select-down></select-down>
+<select-down name="cate_id"></select-down>
 <!--是否置顶 -->
 <view class="_switch">
   <h5>是否置顶:</h5>
-<switch type="switch" class="switch_item" ></switch>
+<switch type="switch" class="switch_item" name="is_top"></switch>
 </view>
 <!-- 富文本 -->
 <h5>内容:</h5>
-<textarea class="_text" maxlength="-1" 
+<textarea class="_text" maxlength="-1" name="content"
 placeholder="就在这里写你的心得吧"
 ></textarea>
 <!-- 按钮 -->
-<my-button></my-button>
+<button type="primary" class="my_button" form-type="submit"> 提交</button>
+<button type="primary" class="my_button" form-type="reset">重置</button>
+</form>

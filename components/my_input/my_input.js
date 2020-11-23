@@ -3,10 +3,14 @@ Component({
   /**
    * 组件的属性列表
    */
+  behaviors: ['wx://form-field-group'],
   properties: {
     title:{
       type:String
     },
+    name:{
+      type:String
+    }
   },
 
   /**

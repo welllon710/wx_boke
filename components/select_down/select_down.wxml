@@ -3,7 +3,8 @@
   <view class="right">分类:</view>
 <view class="left">
   <view class="select" bindtap="handleshow">
-  <text>{{content}}</text>
+  <!-- <text name="{{name}}">{{content}}</text> -->
+  <input type="text" name="{{name}}" value="{{content}}" disabled />
   </view>
   <block wx:if="{{isShow}}">
   <scroll-view scroll-y scroll-top class="select_box" >

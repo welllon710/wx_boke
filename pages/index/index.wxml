@@ -2,5 +2,5 @@
 <cate-tabs list="{{topicList}}" bind:cate="cate"></cate-tabs>
 <text class="title">作者寄语：书山有路勤为径，学海无涯苦作舟</text>
 
-<problem list="{{problemList.data}}" class="problem"></problem>
+<problem list="{{problemList}}" class="problem"></problem>
 </view>

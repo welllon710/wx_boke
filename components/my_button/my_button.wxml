@@ -1,3 +1,3 @@
 <!--components/my_button/my_button.wxml-->
 <text>相信你已经写完了，赶快提交吧！</text>
-<button type="primary" class="my_button"> 提交</button>
+<button type="primary" class="my_button" bindtap="saveArticle"> 提交</button>

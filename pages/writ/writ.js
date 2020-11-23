@@ -1,4 +1,5 @@
 // pages/writ/writ.js
+import { saveArticle } from "../../network/article";
 Page({
 
   /**
@@ -7,7 +8,21 @@ Page({
   data: {
 
   },
+  formSubmit(e){
 
+    let {value} = e.detail
+    console.log(value);
+    
+    saveArticle(value).then(res=>{
+      console.log(res);
+      
+    })
+    
+  },
+  formReset(){
+    console.log('重置');
+    
+  },
   /**
    * 生命周期函数--监听页面加载
    */

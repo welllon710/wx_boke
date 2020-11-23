@@ -8,22 +8,45 @@ Page({
     list:['javascript','html','css','vue'],
     problemList:[],
     topicList:[],
-    topic_id:1,
-    page:1
+    topic_id:1, //当前分类
+  //  page:1,//当前页码
   },
-
+  problem:[],
+  total:1,
+  page:1,
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this._getProblem(this.data.topic_id,this.data.page)
-
+  this._getProblem(this.data.topic_id,this.data.page)
   this._getcate()
+  //走缓存
+  //判断缓存里有没有旧数据
+  // const problem = wx.getStorageSync('problem'+this.data.topic_id)
+  // if(!problem){
+  //   this._getProblem(this.data.topic_id,this.page)
+  // }else{
+  //   if(Date.now() - problem.time > 1000*10){
+  //      this._getProblem(this.data.topic_id,this.page)
+  // }else{
+  //   console.log('走了这里');
+  //   console.log(problem.data);
+  //   this.setData({
+  //     problemList: problem.data
+  //   })
+  // }
+ // }
+  
   },
   _getProblem(id,page){
     getProblem(id,page).then(res=>{
+    //  this.problem = res.data.data
+  //   wx.setStorageSync('problem'+this.data.topic_id,{time:Date.now(),data:this.problem})
+    console.log(res);
+     this.total = res.data.data.last_page //总页数
+     this.page = res.data.data.current_page //当前页
       this.setData({
-        problemList:res.data.data
+        problemList: [...this.data.problemList,...res.data.data.data],
       })
     })
   },
@@ -36,8 +59,11 @@ Page({
     })
   },
   cate(e){
-    console.log(e);
     let {id} = e.detail.cate
+    this.setData({
+      topic_id:id,
+      problemList:[]
+    })
     this._getProblem(id)
     
   },
@@ -45,7 +71,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
+
   },
 
   /**
@@ -82,6 +108,20 @@ Page({
    */
   onReachBottom: function () {
       console.log('吃滴');
+      //下拉下一页
+      console.log(this.page,this.total);
+      
+      if(this.page < this.total){
+       
+       console.log('还有下一页');
+       this.page++
+       this._getProblem(this.data.topic_id,this.page)
+      }else{
+        console.log('meiyu');
+        wx.showToast({
+          title: '没有下一页了哦',
+        })
+      }
       
   },
 

@@ -1,2 +1,6 @@
 <!--pages/home/home.wxml-->
 <text>pages/home/home.wxml</text>
+<form  method="post" bindsubmit="submit">
+  <my-input></my-input>
+  <button form-type="submit">提交</button>
+</form>
