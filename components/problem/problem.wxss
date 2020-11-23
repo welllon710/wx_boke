@@ -1,0 +1,12 @@
+
+.title{
+  font-size: 40rpx;
+  color: red;
+  padding: 0 10rpx;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+}
+.content{
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+}

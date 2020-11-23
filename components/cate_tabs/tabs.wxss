@@ -1,4 +1,7 @@
 /* components/cate/tabs.wxss */
+.tabs{
+  height:80rpx;
+}
 .tab-h {
   height: 80rpx;
   width: 100%;

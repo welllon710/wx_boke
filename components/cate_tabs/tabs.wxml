@@ -1,6 +1,9 @@
 <!--components/cate/tabs.wxml-->
-<scroll-view scroll-x scroll-left="{{left}}" class="tab-h" enable-flex="true">
+<view class="tabs">
+  <scroll-view scroll-x scroll-left="{{left}}" class="tab-h" enable-flex="true">
   <block wx:for="{{list}}" wx:key="{{index}}">
-    <view class="tab-item {{index == current ?'active':''}}" data-current="{{index}}" data-cate="{{item}}" bindtap="switchtab">{{item}}</view>
+    <view class="tab-item {{index == current ?'active':''}}" data-current="{{index}}" data-cate="{{item}}" bindtap="switchtab">{{item.topic}}</view>
   </block>
 </scroll-view>
+</view>
+

@@ -1,4 +1,6 @@
 .title{
-  position: relative;
-  top: 90rpx;
+  font-size: 50rpx;
+  color: aqua;
+  display: inline-block;
+  padding: 30rpx 0;
 }

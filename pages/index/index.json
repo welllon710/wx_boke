@@ -1,6 +1,9 @@
 {
   "usingComponents": {
-    "cate-tabs":"/components/cate_tabs/tabs"
+    "cate-tabs":"/components/cate_tabs/tabs",
+    "problem":"/components/problem/problem"
   },
-  "navigationBarTitleText": "首页"
+  "navigationBarTitleText": "首页",
+  "enablePullDownRefresh":true,
+  "onReachBottomDistance":50
 }
