@@ -1,12 +1,13 @@
 // pages/writ/writ.js
 import { saveArticle } from "../../network/article";
+import { getCate } from "../../network/cate";
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    cateList:[]
   },
   formSubmit(e){
 
@@ -15,7 +16,15 @@ Page({
     
     saveArticle(value).then(res=>{
       console.log(res);
-      
+      if(res.data.code === 200){
+        wx.showToast({
+          title:'文章已提交'
+        })
+      }else{
+        wx.showToast({
+          title:'提交失败,'+res.data.msg
+        })
+      }
     })
     
   },
@@ -27,9 +36,16 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this._getCate()
   },
-
+  _getCate(){
+    getCate().then(res=>{
+      console.log(res);
+      this.setData({
+        cateList:res.data.data
+      })
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

@@ -8,12 +8,13 @@
   </view>
   <block wx:if="{{isShow}}">
   <scroll-view scroll-y scroll-top class="select_box" >
-    <block wx:for="{{5}}" >
+
+    <block wx:for="{{list}}" wx:key="{{item.id}}">
       <view class="select_item {{index % 2 === 0? 'care':'cate'}}" 
       bindtap="handletap"
-      data-index="{{index}}"
-      data-value="{{item}}"
-      hover-class="{{index === current? 'active':''}}">2</view>
+      data-index="{{item.id}}"
+      data-value="{{item.catename}}"
+      hover-class="{{index === current? 'active':''}}">{{item.catename}}</view>
     </block>
   </scroll-view>
 </block>

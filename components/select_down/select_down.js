@@ -7,6 +7,9 @@ Component({
   properties: {
     name:{
       type:String
+    },
+    list:{
+      type:Array
     }
   },
 
