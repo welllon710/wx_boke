@@ -1,6 +1,22 @@
 <!--pages/home/home.wxml-->
-<text>pages/home/home.wxml</text>
-<form  method="post" bindsubmit="submit">
-  <my-input></my-input>
-  <button form-type="submit">提交</button>
-</form>
+<view class="user_info_group">
+  <view class="user_img_wrap" wx:if="{{userinfo.avatarUrl}}">
+    <image class="user_bg" src="{{userinfo.avatarUrl}}" ></image>
+
+    <view class="user_info">
+      <image class="user_icon" src="{{userinfo.avatarUrl}}" ></image>
+      <view class="user_name"></view>
+    </view>
+  </view>
+  <view class="user_btn" wx:else>
+    <button size="mini"
+     type="primary"
+     plain
+     open-type="getUserInfo"
+     bindgetuserinfo="getUser"
+     >登录</button>
+  </view>
+</view>
+<record bind:pub="pub" bind:record="record"></record>
+<pub-content wx:if="{{index===0}}" list="{{todayPub}}"></pub-content>
+<record-content wx:if="{{index===1}}" list="{{todayRead}}"></record-content>

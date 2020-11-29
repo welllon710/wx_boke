@@ -1,0 +1,7 @@
+/* pages/home/child/pub_content/pub_content.wxss */
+.pub{
+  margin: 20rpx 0;
+}
+.history{
+  padding: 0 20rpx;
+}

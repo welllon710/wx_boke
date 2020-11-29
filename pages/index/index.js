@@ -18,25 +18,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  this._getProblem(this.data.topic_id,this.data.page)
+  this._getProblem(this.data.topic_id,this.page)
   this._getcate()
-  //走缓存
-  //判断缓存里有没有旧数据
-  // const problem = wx.getStorageSync('problem'+this.data.topic_id)
-  // if(!problem){
-  //   this._getProblem(this.data.topic_id,this.page)
-  // }else{
-  //   if(Date.now() - problem.time > 1000*10){
-  //      this._getProblem(this.data.topic_id,this.page)
-  // }else{
-  //   console.log('走了这里');
-  //   console.log(problem.data);
-  //   this.setData({
-  //     problemList: problem.data
-  //   })
-  // }
- // }
-  
   },
   _getProblem(id,page){
     getProblem(id,page).then(res=>{
@@ -48,6 +31,7 @@ Page({
       this.setData({
         problemList: [...this.data.problemList,...res.data.data.data],
       })
+      wx.stopPullDownRefresh()
     })
   },
   _getcate(){
@@ -100,7 +84,11 @@ Page({
    */
   onPullDownRefresh: function () {
     console.log('xiala');
-    
+    this.setData({
+      problemList:[]
+    })
+    this.page = 1
+    this._getProblem(this.data.topic_id,this.page)
   },
 
   /**

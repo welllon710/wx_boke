@@ -1,0 +1,10 @@
+<!--pages/home/child/record_content/record_content.wxml-->
+<wxs src="../pub_content/time.wxs" module="time"></wxs>
+<view class="read">
+<text class="history">历史阅读:{{list.length}}篇</text>
+<text>今天阅读:{{time._time(list)}}篇</text>
+</view>
+<block wx:for="{{list}}" wx:key="{{index}}">
+  <read-item today="{{item}}"></read-item>
+</block>
+

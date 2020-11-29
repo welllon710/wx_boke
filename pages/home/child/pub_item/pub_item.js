@@ -1,10 +1,10 @@
-// components/cate_content/cate_item.js
+// pages/home/child/pub_item/pub_item.js
 Component({
   /**
    * 组件的属性列表
    */
   properties: {
-    list:{
+    today:{
       type:Object
     }
   },
@@ -20,6 +20,6 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    
+
   }
 })

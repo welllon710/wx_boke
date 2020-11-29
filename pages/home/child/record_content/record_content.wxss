@@ -1,0 +1,7 @@
+/* pages/home/child/record_content/record_content.wxss */
+.read{
+  margin: 20rpx 0;
+}
+.history{
+  padding: 0 20rpx;
+}

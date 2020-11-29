@@ -1,0 +1,28 @@
+/* pages/home/child/record/record.wxss */
+page{
+  background-color: #FFF5EE;
+}
+.record{
+  display: flex;
+  height: 90rpx;
+  align-items: center;
+  margin-top: 20rpx;
+}
+.pub{
+ flex: 1;
+  height: 100%;
+ text-align: center;
+ line-height: 90rpx;
+
+}
+.read{
+  flex: 1;
+  height: 100%;
+  text-align: center;
+ line-height: 90rpx;
+
+}
+.active{
+  background-color: #FFE4B5;
+  color: #F4A460;
+}

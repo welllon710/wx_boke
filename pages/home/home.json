@@ -1,5 +1,10 @@
 {
   "usingComponents": {
-    "my-input":"/components/my_input/my_input"
-  }
+    "my-input":"/components/my_input/my_input",
+    "record":"./child/record/record",
+    "pub-content":"./child/pub_content/pub_content",
+    "record-content":"./child/record_content/record_content"
+   
+  },
+  "navigationBarTitleText": "我的"
 }

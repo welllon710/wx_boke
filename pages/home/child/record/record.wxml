@@ -1,0 +1,5 @@
+<!--pages/home/child/record/record.wxml-->
+<view class="record">
+<view class="pub {{current == 0 ? 'active':''}}" bindtap="handlejump" data-index="0">我的发布</view>
+<view class="read {{current == 1 ? 'active':''}}" bindtap="handlejump" data-index="1">我的阅读</view>
+</view>

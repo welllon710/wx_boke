@@ -12,8 +12,7 @@ Page({
   formSubmit(e){
 
     let {value} = e.detail
-    console.log(value);
-    
+    value['openid'] = wx.getStorageSync('openid');//判断有没openid,没有跳转登录
     saveArticle(value).then(res=>{
       console.log(res);
       if(res.data.code === 200){

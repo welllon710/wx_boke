@@ -1,15 +1,16 @@
 <!--components/cate_content/cate_item.wxml-->
-<navigator class="article_item" url="/pages/detail/detail?uid=5">
+<wxs src="../../pages/home/child/pub_content/time.wxs" module="time"></wxs>
+<navigator class="article_item" url="/pages/detail/detail?uid={{list.id}}&time={{time.msg}}" >
   <view class="left">
     <!-- <image src=""></image> -->
     <view class="img"></view>
   </view>
   <view class="right">
     <view class="r_title">
-      标题标题1
+      {{list.title}}
     </view>
     <view class="r_time">
-      2019-01-01
+      {{list.create_time}}
     </view>
   </view>
 </navigator>

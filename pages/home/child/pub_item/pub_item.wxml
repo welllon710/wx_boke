@@ -1,0 +1,9 @@
+<!--pages/home/child/pub_item/pub_item.wxml-->
+<view class="pub_item">
+  <wxs src="../pub_content/time.wxs" module="time"></wxs>
+  <view class="wrap">
+    <view class="title">标题：{{today.title}}</view>
+    <view class="time">{{time.timestampToTime(today.create_time)}}</view>
+  </view>
+  <view class="desc">标签：{{today.tags}}</view>
+</view>

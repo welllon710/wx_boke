@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "pub-item":"../pub_item/pub_item"
+  }
+}

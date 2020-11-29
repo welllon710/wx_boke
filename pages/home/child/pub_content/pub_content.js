@@ -1,11 +1,11 @@
-// components/cate_content/cate_item.js
+// pages/home/child/pub_content/pub_content.js
 Component({
   /**
    * 组件的属性列表
    */
   properties: {
     list:{
-      type:Object
+      type:Array
     }
   },
 
@@ -13,7 +13,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-
+    today:0
   },
 
   /**

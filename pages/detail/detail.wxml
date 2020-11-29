@@ -1,0 +1,16 @@
+<!-- <view>{{detail.title}}</view>
+<view>{{detail.desc}}</view>
+<view>{{detail.tags}}</view>
+<view>{{detail.content}}</view>
+<view>{{detail.create_time}}</view> -->
+<view class="detail">
+<view class="title_tags">
+  <text class="title">{{detail.title}}</text>
+ <view class="tags">来自：{{detail.tags}}标签</view>
+</view>
+ <view class="desc">简介概要：{{detail.desc}}</view>
+
+  <text class="time">发布时间：{{detail.create_time}}</text>
+
+ <rich-text nodes="{{detail.content}}" class="content"></rich-text>
+</view>

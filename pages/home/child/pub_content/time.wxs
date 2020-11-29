@@ -1,0 +1,36 @@
+
+
+  //时间戳转换
+  module.exports.timestampToTime = function (timestamp) {
+  var date = getDate(timestamp * 1000);//时间戳为10位需*1000
+  var Y = date.getFullYear() + '-';
+  var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+  var D = date.getDate() + ' ';
+  var h = date.getHours() + ':';
+  var m = date.getMinutes() + ':';
+  var s = date.getSeconds();
+  return Y + M + D + h + m + s;
+}
+
+module.exports.msg = Math.round(getDate().getTime() / 1000) //当前时间戳
+module.exports.day  = function(a,b){  //计算差值
+  var total = a - b
+  return parseInt(total / (24*60*60))
+}
+module.exports._time = function(arr){  //计算当天发布
+  var num = 0
+ for (var i = 0; i < arr.length; i++) {
+   (function(i){
+   var time =  Math.round(getDate().getTime() / 1000)
+   var _diff = time - arr[i].create_time
+   var diff = parseInt(_diff / (24*60*60))
+   if (diff === 0) {
+    num++
+   }
+   })(i)
+ }
+return num
+}
+
+
+

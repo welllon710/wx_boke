@@ -38,7 +38,7 @@
   },
   "compileType": "miniprogram",
   "libVersion": "2.13.1",
-  "appid": "wxae540d5080bc3c8b",
+  "appid": "wx5c11b99fea88a1d8",
   "projectname": "tp_boke",
   "debugOptions": {
     "hidedInDevtools": []
@@ -90,6 +90,25 @@
         {
           "name": "pages/writ/writ",
           "pathName": "pages/writ/writ",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/cate/cate",
+          "pathName": "pages/cate/cate",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/detail/detail",
+          "pathName": "pages/detail/detail",
+          "query": "uid=12",
+          "scene": null
+        },
+        {
+          "name": "pages/home/home",
+          "pathName": "pages/home/home",
+          "query": "uid=12",
           "scene": null
         }
       ]

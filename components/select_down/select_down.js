@@ -19,7 +19,7 @@ Component({
   data: {
     current:0,
     isShow:false,
-    content:'我是内容'
+    content:'请选择分类'
   },
 
   /**

@@ -3,5 +3,8 @@
     "tabs":"../../components/cate_tabs/tabs",
     "content":"../../components/cate_content/cate_item"
   },
-  "navigationBarTitleText": "栏目分类"
+  "navigationBarTitleText": "栏目分类",
+  "enablePullDownRefresh":true,
+  "onReachBottomDistance":100,
+  "backgroundTextStyle": "dark"
 }

@@ -8,3 +8,29 @@ export function saveArticle(data){
     data,
   })
 }
+export function show(id,page=1){
+  return request({
+    url:BaseUrl+'/article/'+id,
+    data:{
+      page:page
+    }
+  })
+}
+export function detail(uid,time){
+  return request({
+    url:BaseUrl+'/articles/detail',
+    data:{
+      uid,
+      time
+    }
+  })
+}
+export function leave(uid,leavetime){
+  return request({
+    url:BaseUrl+'/leave/detail',
+    data:{
+      uid,
+      leavetime
+    }
+  })
+}
