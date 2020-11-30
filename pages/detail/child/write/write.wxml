@@ -1,0 +1,10 @@
+<!--pages/detail/child/write/write.wxml-->
+<view class="write">
+  <view class="header">
+    <view class="cencel">取消</view>
+    <view class="send">发送</view>
+  </view>
+  <view class="text">
+    <textarea placeholder="写下你的感受..." placeholder-style="color:#D3D3D3" style="width:100%"></textarea>
+  </view>
+</view>

@@ -1,0 +1,38 @@
+/* pages/detail/child/write/write.wxss */
+.write{
+  height: 90vh;
+  width: 100%;
+  background-color: white;
+  position: absolute;
+  z-index: 10;
+  box-sizing: border-box;
+  bottom: 0rpx;
+  border-top-right-radius: 40rpx;
+  border-top-left-radius: 40rpx;
+}
+.write .header{
+  height: 90rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .cencel , .header .send{
+  margin: 0 40rpx;
+  font-size: 32rpx;
+}
+.header .send{
+  width: 130rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  color: white;
+  background-color: #00BFFF;
+  border-radius: 35rpx;
+}
+.write .text{
+  padding: 0 40rpx;
+  background-color: #fff
+}
+.text input{
+  width: 100%;
+}

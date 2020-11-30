@@ -1,19 +1,72 @@
 /* components/comment/comment.wxss */
+
 .comment_input{
   height: 90rpx;
   display: flex;
+  margin: 30rpx 0;
+  position: relative;
+ 
 
 }
 .comment_input .avatar{
   height: 100%;
   width: 90rpx;
   background-color: pink;
-  margin: 0 40rpx;
+  margin: 0 45rpx;
+  border-radius: 50%;
+}
+.pencil{
+  width: 70rpx;
+  height: 70rpx;
+  position: absolute;
+  right: 100rpx;
+  top: 15rpx;
 }
 .i_input{
   height: 100%;
   width: 500prx;
-  
+  padding: 0 40rpx;
   background-color: #d0d0d0;
   border-radius: 50rpx;
+}
+.comment_content{
+  display: flex;
+  margin-top: 70rpx;
+ 
+}
+.comment_content .avatar{
+  height: 90rpx;
+  width: 90rpx;
+  background-color: pink;
+  margin: 10rpx 45rpx;
+  border-radius: 50%;
+}
+.main{
+  font-size: 30rpx;
+ flex: 4;
+}
+.main .name{
+  color: #006400;
+}
+.main .text{
+  margin: 10rpx 0;
+}
+.bottom{
+  display: flex;
+  justify-content: space-between;
+}
+.bottom .time{
+  color: #D3D3D3;
+}
+.bottom .reoly{
+  display: flex;
+  margin: 0 40rpx;
+}
+.reoly .reoly_msg{
+  margin-right: 15rpx;
+}
+.reoly .msg , .reoly .great{
+  width: 40rpx;
+  height: 40rpx;
+  padding: 0 10rpx;
 }

@@ -1,7 +1,8 @@
 {
   "component": true,
   "usingComponents": {
-    "comment":"../../components/comment/comment"
+    "comment":"../../components/comment/comment",
+    "write":"./child/write/write"
   },
   "navigationBarTitleText": "文章"
 }

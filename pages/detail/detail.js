@@ -8,9 +8,15 @@ Page({
    */
   data: {
       select:false,
-      detail:{}
+      detail:{},
+      isshow:false
   },
   uid:'',
+  handlewrite(){
+    this.setData({
+      isshow:!this.data.isshow
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

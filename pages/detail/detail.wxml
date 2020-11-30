@@ -1,8 +1,4 @@
-<!-- <view>{{detail.title}}</view>
-<view>{{detail.desc}}</view>
-<view>{{detail.tags}}</view>
-<view>{{detail.content}}</view>
-<view>{{detail.create_time}}</view> -->
+
 <view class="detail">
 <view class="title_tags">
   <text class="title">{{detail.title}}</text>
@@ -13,7 +9,9 @@
   <text class="time">发布时间：{{detail.create_time}}</text>
 
  <rich-text nodes="{{detail.content}}" class="content"></rich-text>
-</view>
-<!-- 评论 -->
+ <!-- 评论表 -->
 <view>评论</view>
-<comment></comment>
+<comment bind:write="handlewrite"></comment>
+<!-- 发送评论 -->
+<write ></write>
+</view>

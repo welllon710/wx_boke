@@ -1,4 +1,4 @@
-// components/comment/comment.js
+// pages/detail/child/write/write.js
 Component({
   /**
    * 组件的属性列表
@@ -18,8 +18,6 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    handlewtite(){
-      this.triggerEvent('write')
-    }
+
   }
 })
