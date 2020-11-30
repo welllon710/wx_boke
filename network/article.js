@@ -19,9 +19,12 @@ export function show(id,page=1){
 export function detail(uid,time){
   return request({
     url:BaseUrl+'/articles/detail',
+    method:'get',
     data:{
       uid,
-      time
+      time,
+    //  openid:wx.getStorageSync('openid')||''
+     // openid:''
     }
   })
 }
@@ -30,7 +33,7 @@ export function leave(uid,leavetime){
     url:BaseUrl+'/leave/detail',
     data:{
       uid,
-      leavetime
+      leavetime,
     }
   })
 }

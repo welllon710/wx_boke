@@ -4,7 +4,9 @@
 <view class="pub">
 <text class="history">历史发布:{{list.length}}篇</text>
 <text>今天发布:{{time._time(list)}}篇</text>
+
 </view>
 <block wx:for="{{list}}" wx:key="{{index}}">
-  <pub-item today="{{item}}"></pub-item>
+  
+  <pub-item today="{{item}}" index="{{order}}"></pub-item>
 </block>

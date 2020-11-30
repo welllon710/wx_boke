@@ -62,7 +62,7 @@ Page({
       this.tatal =  res.data.data.last_page,
       this.page = res.data.data.current_page
       this.setData({
-        contentList:[...this.data.contentList,...res.data.data.data]
+        contentList:res.data.data.data
       })
       wx.stopPullDownRefresh();
     })

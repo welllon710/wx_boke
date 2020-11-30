@@ -6,6 +6,9 @@ Component({
   properties: {
     today:{
       type:Object
+    },
+    index:{
+      type:Number
     }
   },
 
@@ -13,7 +16,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-
+    
   },
 
   /**

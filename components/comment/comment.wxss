@@ -1,0 +1,19 @@
+/* components/comment/comment.wxss */
+.comment_input{
+  height: 90rpx;
+  display: flex;
+
+}
+.comment_input .avatar{
+  height: 100%;
+  width: 90rpx;
+  background-color: pink;
+  margin: 0 40rpx;
+}
+.i_input{
+  height: 100%;
+  width: 500prx;
+  
+  background-color: #d0d0d0;
+  border-radius: 50rpx;
+}

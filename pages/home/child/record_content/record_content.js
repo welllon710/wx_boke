@@ -6,6 +6,9 @@ Component({
   properties: {
     list:{
       type:Object
+    },
+    order:{
+      type:Number
     }
   },
 

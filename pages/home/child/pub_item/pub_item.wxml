@@ -3,7 +3,8 @@
   <wxs src="../pub_content/time.wxs" module="time"></wxs>
   <view class="wrap">
     <view class="title">标题：{{today.title}}</view>
-    <view class="time">{{time.timestampToTime(today.create_time)}}</view>
+    <view class="time" wx:if="{{index===0}}">{{time.timestampToTime(today.create_time)}}</view>
+    <view class="time" wx:else>{{time.timestampToTime(today.read_time)}}</view>
   </view>
   <view class="desc">标签：{{today.tags}}</view>
 </view>

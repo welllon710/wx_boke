@@ -10,6 +10,7 @@
 }
 .user_img_wrap .user_bg{
   height: 46vh;
+  width: 100%;
   filter:blur(10rpx) ;
 }
 .user_img_wrap .user_info{

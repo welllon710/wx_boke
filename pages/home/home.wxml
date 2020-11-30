@@ -18,5 +18,5 @@
   </view>
 </view>
 <record bind:pub="pub" bind:record="record"></record>
-<pub-content wx:if="{{index===0}}" list="{{todayPub}}"></pub-content>
-<record-content wx:if="{{index===1}}" list="{{todayRead}}"></record-content>
+<pub-content wx:if="{{index===0}}" list="{{todayPub}}" order="0"></pub-content>
+<record-content wx:if="{{index===1}}" list="{{todayRead}}" order="1"></record-content>

@@ -1,0 +1,7 @@
+<!--components/comment/comment.wxml-->
+<text>精彩评论(1)</text>
+<view class="comment_input">
+  <image class="avatar"></image>
+  <input type="text" placeholder="期待你的美评" class="i_input" disabled />
+</view>
+<view class="comment_content"></view>
