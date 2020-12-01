@@ -13,6 +13,7 @@
     value="{{val}}"
     ></textarea>
   </view>
-  <view>{{val}}</view>
+  <emojj bind:emojj="tapemojj" emojj="{{emojj}}"></emojj>
 </view>
-<emojj bind:emojj="tapemojj" emojj="{{emojj}}"></emojj>
+<!-- emojj -->
+

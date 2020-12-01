@@ -1,6 +1,6 @@
 // pages/detail/detail.js
 import { detail,leave } from "../../network/article";
-import { getcomment } from "../../network/comment";
+import { getcomment,comment } from "../../network/comment";
 Page({
 
   /**
@@ -49,6 +49,33 @@ Page({
         commentList:res.data.data
       })
     })
+  },
+  handlemsg(e){
+    //发送评论
+      let uid = wx.getStorageSync('uid') //文章id
+      let wxid = wx.getStorageSync('userinfo').id //用户id
+     // let name =  wx.getStorageSync('userinfo').nickname //用户名
+      let value = e.detail
+      comment(wxid,uid,value).then(res=>{
+        if(res.data.code === 200){
+          wx.showToast({
+            title: '已发送',
+            duration:2000,
+            mask:true,
+            success:()=>{
+              this.setData({
+                isshow:false
+              })
+              this.getcomment(uid)
+            }
+          })
+          
+        }else{
+          wx.showToast({
+            title:'提交失败,'+res.data.msg
+          })
+        }
+      })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

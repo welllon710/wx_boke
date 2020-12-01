@@ -11,6 +11,7 @@ export function comment(wxid,uid,value){
     url:BaseUrl+'/comment',
     method:'post',
     data:{
+
       wxid,
       uid,
       value

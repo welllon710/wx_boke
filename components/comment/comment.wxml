@@ -11,7 +11,7 @@
   <view class="comment_content">
   <image class="avatar"></image>
   <view class="main">
-    <view class="name">{{item.wx_id}}</view>
+    <view class="name">{{item.nickname}}</view>
     <view class="text">
      {{item.content}}
     </view>
@@ -22,7 +22,7 @@
       <view class="reoly">
        <view class="reoly_msg">
          <image src="../../static/comment/msg.png" class="msg"></image>
-         <text>回复</text>
+         <text bindtap="handlereply" data-aid="{{item.article_id}}" data-wid="{{item.wx_id}}">回复</text>
        </view>
        <view class="reoly_great">
          <image src="../../static/comment/great.png" class="great"></image>

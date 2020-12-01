@@ -1,5 +1,5 @@
-
-<view class="detail">
+<view class="box {{isshow?'active':''}}">
+  <view class="detail">
 <view class="title_tags">
   <text class="title">{{detail.title}}</text>
  <view class="tags">来自：{{detail.tags}}标签</view>
@@ -13,5 +13,7 @@
 <view>评论</view>
 <comment bind:write="handlewrite" commentList="{{commentList}}"></comment>
 <!-- 发送评论 -->
-<write wx:if="{{isshow}}" bind:cencel="handlecencel"></write>
+<write wx:if="{{isshow}}" bind:cencel="handlecencel" bind:sendmsg="handlemsg"></write>
 </view>
+</view>
+

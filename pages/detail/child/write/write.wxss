@@ -1,6 +1,6 @@
 /* pages/detail/child/write/write.wxss */
 .write{
-  height: 90vh;
+  height: 80%;
   width: 100%;
   background-color: white;
   position: absolute;

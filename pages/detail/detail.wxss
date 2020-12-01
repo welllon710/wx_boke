@@ -1,9 +1,17 @@
+.box{
+  height: 100vh;
+ 
+}
+.active{
+  overflow: hidden;
+}
 page{
   background-color: #F0FFF0;
 }
+
 .detail{
   position: relative;
-  height: 100vh;
+  height: 100%;
 }
 text{
   display: inline-block;

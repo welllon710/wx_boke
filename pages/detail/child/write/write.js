@@ -1,5 +1,4 @@
 // pages/detail/child/write/write.js
-import { comment,getcomment } from "../../../../network/comment.js";
 Component({
   /**
    * 组件的属性列表
@@ -73,6 +72,12 @@ Component({
       })
     },
     sendmsg(){
+        if (this.data.val !== '') {
+          this.triggerEvent('sendmsg',this.data.val)
+        }
+       
+      
+      
       //console.log(this.data.val);
       //id，文章id,用户id，内容,父类id
       /*
@@ -81,18 +86,18 @@ Component({
         内容 => value
         父 => 0
       */
-     let uid = wx.getStorageSync('uid')
-     let wxid = wx.getStorageSync('userinfo').id
-     let value = this.data.val
-      comment(wxid,uid,value).then(res=>{
-        console.log(res);
-        if(res.data.code === 200){
-          wx.showToast({
-            title: '已发送',
-          })
-          getcomment(uid)
-        }
-      })
+    //  let uid = wx.getStorageSync('uid')
+    //  let wxid = wx.getStorageSync('userinfo').id
+    //  let value = this.data.val
+    //   comment(wxid,uid,value).then(res=>{
+    //     console.log(res);
+    //     if(res.data.code === 200){
+    //       wx.showToast({
+    //         title: '已发送',
+    //       })
+    //       getcomment(uid)
+    //     }
+    //   })
     }
   }
 })

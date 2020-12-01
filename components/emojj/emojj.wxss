@@ -1,10 +1,8 @@
 /* components/emojj/emojj.wxss */
 .emojj{
   z-index: 10;
-  position: relative;
   display: flex;
   justify-content: space-evenly;
-  top: -100rpx;
 }
 .emojj_item{
   font-size: 45rpx;
