@@ -5,6 +5,8 @@ App({
    onLaunch:function(){
     const openid = wx.getStorageSync('openid')
     if (!openid) {
+    
+      
       this._login()
     }
    
@@ -12,6 +14,7 @@ App({
   async _login(){
     const {code} = await wxlogin()
     const {data} = await login(code)
-    wx.setStorageSync('openid', data.data.openid)
+    console.log(data);
+   wx.setStorageSync('openid', data.data.openid)
   }
 })

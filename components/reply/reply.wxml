@@ -1,0 +1,7 @@
+<!--components/reply/reply.wxml-->
+<view class="reply" wx:for="{{comment_item}}" wx:key="{{index}}">
+  <textarea class="text">
+    {{item.wx_id}}：{{item.content}}
+  </textarea>
+  <reply-item comment_item="{{item.child}}"></reply-item>
+</view>

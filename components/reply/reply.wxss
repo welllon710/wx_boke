@@ -1,0 +1,13 @@
+/* components/reply/reply.wxss */
+.reply{
+  margin-top: 30rpx;
+ width: 100%;
+}
+.text{
+  height: 100%;
+  background-color: #d0d0d0;
+  margin-bottom: 10rpx;
+  border-radius: 20rpx;
+  padding: 12rpx 20rpx;
+  width: 470rpx;
+}

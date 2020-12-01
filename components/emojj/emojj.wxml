@@ -1,0 +1,6 @@
+<!--components/emojj/emojj.wxml-->
+<view class="emojj">
+  <block wx:for="{{emojj}}" wx:key="{{index}}">
+    <view bindtap="tapEmojj" data-i="{{index}}" class="emojj_item">{{item.char}}</view>
+  </block>
+</view>

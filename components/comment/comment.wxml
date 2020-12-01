@@ -5,16 +5,19 @@
   <image class="pencil" src="../../static/comment/pencil.png"></image>
   <input type="text" placeholder="期待你的美评..." class="i_input" disabled bindtap="handlewtite"/>
 </view>
-<view class="comment_content">
+<block wx:for="{{commentList}}" wx:key="{{index}}">
+<view class="box">
+  <!-- 一级回复 -->
+  <view class="comment_content">
   <image class="avatar"></image>
   <view class="main">
-    <view class="name">胡小胡</view>
+    <view class="name">{{item.wx_id}}</view>
     <view class="text">
-      今天天气挺好的，
+     {{item.content}}
     </view>
     <view class="bottom">
       <view class="time">
-        17分钟前
+       {{item.create_time}}
       </view>
       <view class="reoly">
        <view class="reoly_msg">
@@ -29,4 +32,12 @@
     </view>
   </view>
 </view>
+<!-- 二级回复 -->
+<view class="reply">
+  <reply_item comment_item="{{item.child}}"></reply_item>
+</view>
+</view>
+</block>
+
+
 

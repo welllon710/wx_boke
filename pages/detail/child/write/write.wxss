@@ -26,8 +26,11 @@
   line-height: 50rpx;
   text-align: center;
   color: white;
-  background-color: #00BFFF;
+  background-color: #BFDADE;
   border-radius: 35rpx;
+}
+.active{
+  background-color: #00BFFF !important;
 }
 .write .text{
   padding: 0 40rpx;

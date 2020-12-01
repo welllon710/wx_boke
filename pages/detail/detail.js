@@ -1,6 +1,6 @@
 // pages/detail/detail.js
 import { detail,leave } from "../../network/article";
-
+import { getcomment } from "../../network/comment";
 Page({
 
   /**
@@ -9,12 +9,18 @@ Page({
   data: {
       select:false,
       detail:{},
-      isshow:false
+      isshow:false,
+      commentList:[]
   },
-  uid:'',
+  uid:0,
   handlewrite(){
     this.setData({
       isshow:!this.data.isshow
+    })
+  },
+  handlecencel(){
+    this.setData({
+      isshow:false
     })
   },
   /**
@@ -24,13 +30,23 @@ Page({
     //console.log(options);
     let {uid,time} = options
     this.uid = uid
+    wx.setStorageSync('uid', uid)
     this._getDetail(uid,time)
+    this.getcomment(uid)
   },
   _getDetail(id,time){
     console.log('请求了');
     detail(id,time).then(res=>{
       this.setData({
         detail:res.data.data
+      })
+    })
+  },
+  getcomment(uid){ //获取评论
+    getcomment(uid).then(res=>{
+      console.log(res);
+      this.setData({
+        commentList:res.data.data
       })
     })
   },

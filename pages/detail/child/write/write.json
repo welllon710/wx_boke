@@ -1,4 +1,6 @@
 {
   "component": true,
-  "usingComponents": {}
+  "usingComponents": {
+    "emojj":"/components/emojj/emojj"
+  }
 }

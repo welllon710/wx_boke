@@ -13,8 +13,8 @@ Page({
     index:0
   },
   getUser(e){
-    const {userInfo} = e.detail
-    wx.setStorageSync('userinfo', userInfo)
+     const {userInfo} = e.detail
+    // wx.setStorageSync('userinfo', userInfo)
     this.setData({
       userinfo:userInfo
     })
@@ -26,8 +26,7 @@ Page({
       openid:wx.getStorageSync('openid')
     }
     saveUser(user).then(res=>{
-      console.log(res);
-      
+       wx.setStorageSync('userinfo', res.data.data)
     })
   },
   async pub(e){

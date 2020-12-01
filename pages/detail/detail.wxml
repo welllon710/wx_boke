@@ -11,7 +11,7 @@
  <rich-text nodes="{{detail.content}}" class="content"></rich-text>
  <!-- 评论表 -->
 <view>评论</view>
-<comment bind:write="handlewrite"></comment>
+<comment bind:write="handlewrite" commentList="{{commentList}}"></comment>
 <!-- 发送评论 -->
-<write ></write>
+<write wx:if="{{isshow}}" bind:cencel="handlecencel"></write>
 </view>

@@ -1,10 +1,18 @@
 <!--pages/detail/child/write/write.wxml-->
 <view class="write">
   <view class="header">
-    <view class="cencel">取消</view>
-    <view class="send">发送</view>
+    <view class="cencel" bindtap="handlecancer">取消</view>
+    <view class="send {{val!==''?'active':''}}" bindtap="sendmsg">发送</view>
   </view>
   <view class="text">
-    <textarea placeholder="写下你的感受..." placeholder-style="color:#D3D3D3" style="width:100%"></textarea>
+    <textarea placeholder="写下你的感受..." 
+    placeholder-style="color:#D3D3D3" 
+    style="width:100%"
+    bindinput="inputedit"
+    data-name="val"
+    value="{{val}}"
+    ></textarea>
   </view>
+  <view>{{val}}</view>
 </view>
+<emojj bind:emojj="tapemojj" emojj="{{emojj}}"></emojj>

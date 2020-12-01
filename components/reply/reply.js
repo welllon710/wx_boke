@@ -1,10 +1,10 @@
-// components/comment/comment.js
+// components/reply/reply.js
 Component({
   /**
    * 组件的属性列表
    */
   properties: {
-    commentList:{
+    comment_item:{
       type:Array
     }
   },
@@ -20,8 +20,6 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    handlewtite(){
-      this.triggerEvent('write')
-    }
+
   }
 })
