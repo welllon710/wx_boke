@@ -11,9 +11,19 @@
  <rich-text nodes="{{detail.content}}" class="content"></rich-text>
  <!-- 评论表 -->
 <view>评论</view>
-<comment bind:write="handlewrite" commentList="{{commentList}}"></comment>
+<comment 
+bind:write="handlewrite"
+bind:reply="handlereply"
+bind:itemreply="itemhandlereply"
+commentList="{{commentList}}"
+
+ ></comment>
 <!-- 发送评论 -->
-<write wx:if="{{isshow}}" bind:cencel="handlecencel" bind:sendmsg="handlemsg"></write>
+<write wx:if="{{isshow}}" 
+isSend="{{isSend}}"
+name="{{osidename}}"
+bind:cencel="handlecencel" 
+bind:sendmsg="handlemsg"></write>
 </view>
 </view>
 

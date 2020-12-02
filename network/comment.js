@@ -6,15 +6,24 @@ export function getcomment(uid){
     url:BaseUrl+'/comment/'+uid
   })
 }
-export function comment(wxid,uid,value){
+export function comment(myname,myid,uid,value){
   return request({
     url:BaseUrl+'/comment',
     method:'post',
     data:{
-
-      wxid,
+      myname,
+      myid,
       uid,
       value
+    }
+  })
+}
+export function reply(obj){
+  return request({
+    url:BaseUrl+'/reply',
+    method:'post',
+    data:{
+      obj
     }
   })
 }

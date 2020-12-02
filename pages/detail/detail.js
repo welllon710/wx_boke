@@ -1,6 +1,6 @@
 // pages/detail/detail.js
 import { detail,leave } from "../../network/article";
-import { getcomment,comment } from "../../network/comment";
+import { getcomment,comment,reply } from "../../network/comment";
 Page({
 
   /**
@@ -10,12 +10,18 @@ Page({
       select:false,
       detail:{},
       isshow:false,
+      isSend:true,
+      osidename:'',
       commentList:[]
   },
   uid:0,
+  replyObj:{},
+
   handlewrite(){
     this.setData({
-      isshow:!this.data.isshow
+      isshow:!this.data.isshow,
+      isSend:true,
+      
     })
   },
   handlecencel(){
@@ -35,7 +41,7 @@ Page({
     this.getcomment(uid)
   },
   _getDetail(id,time){
-    console.log('请求了');
+   // console.log('请求了');
     detail(id,time).then(res=>{
       this.setData({
         detail:res.data.data
@@ -52,11 +58,12 @@ Page({
   },
   handlemsg(e){
     //发送评论
-      let uid = wx.getStorageSync('uid') //文章id
-      let wxid = wx.getStorageSync('userinfo').id //用户id
-     // let name =  wx.getStorageSync('userinfo').nickname //用户名
-      let value = e.detail
-      comment(wxid,uid,value).then(res=>{
+    let uid = wx.getStorageSync('uid') //文章id
+    let myid = wx.getStorageSync('userinfo').id //用户id
+    let myname =  wx.getStorageSync('userinfo').nickname //用户名
+    let value = e.detail
+      if (this.data.isSend) {
+      comment(myname,myid,uid,value).then(res=>{
         if(res.data.code === 200){
           wx.showToast({
             title: '已发送',
@@ -69,13 +76,74 @@ Page({
               this.getcomment(uid)
             }
           })
-          
         }else{
           wx.showToast({
             title:'提交失败,'+res.data.msg
           })
         }
       })
+    }else{
+      //回复
+      this.replyObj['uid'] = uid
+      this.replyObj['myid'] = myid
+      this.replyObj['myname'] = myname
+      this.replyObj['value'] = value
+      reply(this.replyObj).then(res=>{
+        if(res.data.code === 200){
+          wx.showToast({
+            title: '已发送',
+            duration:2000,
+            mask:true,
+            success:()=>{
+              this.setData({
+                isshow:false
+              })
+              this.replyObj = {}
+              this.getcomment(uid)
+            }
+          })
+        }else{
+          wx.showToast({
+            title:'提交失败,'+res.data.msg
+          })
+        }
+      })
+    }
+  },
+  handlereply(e){ //回复评论
+   // let {wid,oside,comment_id} = e.detail
+  let item = e.detail
+    this.setData({
+      isshow:true,
+      isSend:false,
+      osidename:item.nickname
+    })
+     this.replyObj = {
+      wid:item.wx_id, //对方id
+      cid:item.id, //评论id
+     // pname:item.nickname //对方名字
+      // uid,//文章id
+      // myid,//我的id
+      // myname //我的用户名
+    }
+   
+  },
+  itemhandlereply(e){
+    let item = e.detail
+    this.setData({
+      isshow:true,
+      isSend:false,
+      osidename:item.nickname
+    })
+    this.replyObj = {
+      wid:item.wx_id, //对方id
+      cid:item.id, //评论id
+     // pname:item.nickname //对方名字
+      // uid,//文章id
+      // myid,//我的id
+      // myname //我的用户名
+    }
+    
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -106,11 +174,6 @@ Page({
     timestamp = timestamp / 1000;
     leave(this.uid,timestamp).then(res=>{
       if(res.data.code === 200){
-        console.log(res.msg);
-        wx.showToast({
-          title:res.data.msg
-        })
-      }else{
         wx.showToast({
           title:res.data.msg
         })

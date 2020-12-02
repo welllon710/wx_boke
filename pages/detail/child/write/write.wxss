@@ -4,7 +4,7 @@
   width: 100%;
   background-color: white;
   position: absolute;
-  z-index: 10;
+  z-index: 30;
   box-sizing: border-box;
   bottom: 0rpx;
   border-top-right-radius: 40rpx;
@@ -13,21 +13,24 @@
 .write .header{
   height: 90rpx;
   display: flex;
-  justify-content: space-between;
+ justify-content: space-between;
   align-items: center;
 }
 .header .cencel , .header .send{
   margin: 0 40rpx;
   font-size: 32rpx;
+
 }
 .header .send{
-  width: 130rpx;
+ 
   height: 50rpx;
+  padding: 0 40rpx;
   line-height: 50rpx;
   text-align: center;
   color: white;
   background-color: #BFDADE;
   border-radius: 35rpx;
+
 }
 .active{
   background-color: #00BFFF !important;

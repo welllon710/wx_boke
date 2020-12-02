@@ -1,7 +1,8 @@
 <!--components/comment/comment.wxml-->
 <text>精彩评论(1)</text>
 <view class="comment_input">
-  <image class="avatar"></image>
+
+  <image class="avatar" src="{{avatar}}"></image>
   <image class="pencil" src="../../static/comment/pencil.png"></image>
   <input type="text" placeholder="期待你的美评..." class="i_input" disabled bindtap="handlewtite"/>
 </view>
@@ -9,7 +10,7 @@
 <view class="box">
   <!-- 一级回复 -->
   <view class="comment_content">
-  <image class="avatar"></image>
+  <image class="avatar" src="{{avatar}}"></image>
   <view class="main">
     <view class="name">{{item.nickname}}</view>
     <view class="text">
@@ -19,10 +20,14 @@
       <view class="time">
        {{item.create_time}}
       </view>
-      <view class="reoly">
+      <view class="reoly"
+      bindtap="handlereply"
+      data-item="{{item}}"
+      >
        <view class="reoly_msg">
          <image src="../../static/comment/msg.png" class="msg"></image>
-         <text bindtap="handlereply" data-aid="{{item.article_id}}" data-wid="{{item.wx_id}}">回复</text>
+         <text  data-aid="{{item.article_id}}" 
+         >回复</text>
        </view>
        <view class="reoly_great">
          <image src="../../static/comment/great.png" class="great"></image>
@@ -34,7 +39,9 @@
 </view>
 <!-- 二级回复 -->
 <view class="reply">
-  <reply_item comment_item="{{item.child}}"></reply_item>
+  <reply_item 
+  comment_item="{{item.child}}"
+  bind:itemreply="itemreply"></reply_item>
 </view>
 </view>
 </block>

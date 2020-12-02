@@ -2,7 +2,9 @@
 <view class="write">
   <view class="header">
     <view class="cencel" bindtap="handlecancer">取消</view>
-    <view class="send {{val!==''?'active':''}}" bindtap="sendmsg">发送</view>
+    <view>{{isSend}}</view>
+    <view wx:if="{{isSend}}" class="send {{val!==''?'active':''}}" bindtap="sendmsg">发送</view>
+    <view wx:else class="send {{val!==''?'active':''}}" bindtap="sendmsg">回复:{{name}}</view>
   </view>
   <view class="text">
     <textarea placeholder="写下你的感受..." 

@@ -72,6 +72,5 @@
   padding: 0 10rpx;
 }
 .reply{
-  position: relative;
-  left: 160rpx;
+ margin-left: 160rpx;
 }

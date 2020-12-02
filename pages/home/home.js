@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    userinfo:{},
+    userinfo:wx.getStorageSync('userinfo'),
     todayPub:[],
     todayRead:[],
     index:0
@@ -15,9 +15,9 @@ Page({
   getUser(e){
      const {userInfo} = e.detail
     // wx.setStorageSync('userinfo', userInfo)
-    this.setData({
-      userinfo:userInfo
-    })
+    // this.setData({
+    //   userinfo:userInfo
+    // })
     let user = {
       nickname:userInfo.nickName,
       gender:userInfo.gender,
@@ -70,7 +70,6 @@ Page({
    */
   onShow: function () {
     console.log('页面显示');
-    
     const userinfo = wx.getStorageSync('userinfo')
     this.setData({
       userinfo

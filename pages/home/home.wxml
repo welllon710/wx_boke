@@ -1,12 +1,12 @@
 <!--pages/home/home.wxml-->
 <view class="user_info_group">
-  <view class="user_img_wrap" wx:if="{{userinfo.avatarUrl}}">
-    <image class="user_bg" src="{{userinfo.avatarUrl}}" ></image>
+  <view class="user_img_wrap" wx:if="{{userinfo.avatarurl}}">
+    <image class="user_bg" src="{{userinfo.avatarurl}}" ></image>
 
     <view class="user_info">
-      <image class="user_icon" src="{{userinfo.avatarUrl}}" ></image>
+      <image class="user_icon" src="{{userinfo.avatarurl}}" ></image>
       <view class="user_name">
-      {{userinfo.nickName}}
+      {{userinfo.nickname}}
       </view>
     </view>
   </view>
