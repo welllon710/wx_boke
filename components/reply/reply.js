@@ -22,7 +22,6 @@ Component({
    */
   methods: {
     itemreply(e){
-      
       let {item} = e.currentTarget.dataset
       this.triggerEvent('itemreply',item)
     }

@@ -4,5 +4,5 @@
   {{item.nickname}}@{{item.parent_name}}：{{item.content}}
   </textarea>
   <view class="item_reply" bindtap="itemreply" data-item="{{item}}">回复</view>
-  <reply-item comment_item="{{item.child}}"></reply-item>
+  <reply-item comment_item="{{item.child}}"  bind:itemreply="itemreply" data-item="{{item}}"></reply-item>
 </view>

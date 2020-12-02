@@ -7,6 +7,5 @@
 
 </view>
 <block wx:for="{{list}}" wx:key="{{index}}">
-  
   <pub-item today="{{item}}" index="{{order}}"></pub-item>
 </block>

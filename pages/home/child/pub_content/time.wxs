@@ -24,8 +24,7 @@ module.exports._time = function(arr){  //计算当天发布
    var time =  Math.round(getDate().getTime() / 1000)
    var ctime = arr[i].create_time||arr[i].read_time
    var _diff = time - ctime
-   console.log(_diff);
-   
+
    var diff = parseInt(_diff / (24*60*60))
    if (diff === 0) {
     num++

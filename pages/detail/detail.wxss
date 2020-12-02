@@ -42,3 +42,12 @@ text{
  font-size: 34rpx;
 
 }
+.comm{
+  font-size: 50rpx;
+  border-top: 2rpx solid black;
+  padding-top: 12rpx;
+  margin-top: 120rpx;
+}
+.text{
+  padding: 0 20rpx;
+}

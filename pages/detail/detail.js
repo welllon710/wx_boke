@@ -9,7 +9,7 @@ Page({
   data: {
       select:false,
       detail:{},
-      isshow:false,
+      isshow:false,//写评论的框
       isSend:true,
       osidename:'',
       commentList:[]
@@ -21,7 +21,6 @@ Page({
     this.setData({
       isshow:!this.data.isshow,
       isSend:true,
-      
     })
   },
   handlecencel(){
@@ -138,7 +137,7 @@ Page({
     this.replyObj = {
       wid:item.wx_id, //对方id
       cid:item.id, //评论id
-     // pname:item.nickname //对方名字
+      pname:item.nickname //对方名字
       // uid,//文章id
       // myid,//我的id
       // myname //我的用户名

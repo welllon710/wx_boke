@@ -8,20 +8,29 @@ Component({
       type:Array
     },
   },
-
   /**
    * 组件的初始数据
    */
   data: {
-    avatar:wx.getStorageSync('userinfo').avatarurl
+    //avatar:wx.getStorageSync('userinfo').avatarurl,
+    avatar:''
   },
-
+  pageLifetimes:{
+    show: function() {
+      // 页面被展示
+      console.log('展示');
+      this.setData({
+        avatar:wx.getStorageSync('userinfo').avatarurl,
+      })
+    },
+  },
   /**
    * 组件的方法列表
    */
   methods: {
+   // userinfo:wx.getStorageSync('userinfo'),
     handlewtite(){
-      const userinfo = wx.getStorageSync('userinfo')
+     const userinfo = wx.getStorageSync('userinfo')
       if (userinfo) {
         this.triggerEvent('write')
       }else{
@@ -30,31 +39,27 @@ Component({
          content:'请先登录,再来评论哦',
          success(res){
           if (res.confirm) {
-            console.log('用户点击确定')
-            wx.navigateTo({
-              url: '/pages/home/home',
-            })
-          } else if (res.cancel) {
-            console.log('用户点击取消')
-          }
+          wx.switchTab({
+            url: '/pages/home/home',
+          })
+          } 
          }
        })
-       
-       
       }
-     
     },
     handlereply(e){
-
-     // let {wid,oside,comment_id} = e.currentTarget.dataset
-      let {item} =  e.currentTarget.dataset
-     // console.log(aid,wid);
-      this.triggerEvent('reply',item)
+      const userinfo = wx.getStorageSync('userinfo')
+      if (userinfo) {
+        let {item} =  e.currentTarget.dataset
+        this.triggerEvent('reply',item)
+      }
     },
     itemreply(e){
-      let item = e.detail
-      this.triggerEvent('itemreply',item)
-
+      const userinfo = wx.getStorageSync('userinfo')
+      if (userinfo) {
+        let item = e.detail
+        this.triggerEvent('itemreply',item)
+      }
     }
     
   }

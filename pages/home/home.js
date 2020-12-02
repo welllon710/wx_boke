@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    userinfo:wx.getStorageSync('userinfo'),
+    userinfo:wx.getStorageSync('userinfo')||[],
     todayPub:[],
     todayRead:[],
     index:0
@@ -26,54 +26,76 @@ Page({
       openid:wx.getStorageSync('openid')
     }
     saveUser(user).then(res=>{
-       wx.setStorageSync('userinfo', res.data.data)
+      this.setData({
+        userinfo:res.data.data
+      })
+      wx.setStorageSync('userinfo', res.data.data)
+      pub().then(({data})=>{
+      wx.setStorageSync('mypub', data.data)
+        this.setData({
+          todayPub:data.data
+        })
+        
+      })
     })
   },
   async pub(e){
+    if (wx.getStorageSync('userinfo')) {
     const {data} = await pub();
     this.setData({
       todayPub:data.data,
       index:Number(e.detail)
     })
+  }
   },
   async record(e){
+    if (wx.getStorageSync('userinfo')) {
     console.log('yuedu');
     const {data} = await read();
     this.setData({
       index:Number(e.detail),
       todayRead:data.data
     })
-    
+  }
     
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    pub().then(({data})=>{
-      this.setData({
-        todayPub:data.data
-      })
-      
-    })
+    console.log('记载');
+   
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
-  },
+    console.log('渲染');
+  },  
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    console.log('页面显示');
     const userinfo = wx.getStorageSync('userinfo')
-    this.setData({
-      userinfo
-    })
+    if (userinfo) {
+      this.setData({
+        userinfo
+      })
+      if (wx.getStorageSync('mypub')) {
+        this.setData({
+          todayPub:wx.getStorageSync('mypub')
+        })
+      }else{
+         pub().then(({data})=>{
+        this.setData({
+          todayPub:data.data
+        })
+        wx.setStorageSync('mypub', data.data)
+      })
+      }
+    }
   },
 
   /**

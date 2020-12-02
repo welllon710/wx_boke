@@ -1,3 +1,4 @@
+<wxs src="../../pages/home/child/pub_content/time.wxs" module="time"></wxs>
 <view class="box {{isshow?'active':''}}">
   <view class="detail">
 <view class="title_tags">
@@ -6,11 +7,12 @@
 </view>
  <view class="desc">简介概要：{{detail.desc}}</view>
 
-  <text class="time">发布时间：{{detail.create_time}}</text>
-
- <rich-text nodes="{{detail.content}}" class="content"></rich-text>
+  <text class="time">发布时间：{{time.timestampToTime(detail.create_time)}}</text>
+  <view class="text">
+    <rich-text nodes="{{detail.content}}" class="content"></rich-text>
+  </view>
  <!-- 评论表 -->
-<view>评论</view>
+<view class="comm">评论</view>
 <comment 
 bind:write="handlewrite"
 bind:reply="handlereply"
