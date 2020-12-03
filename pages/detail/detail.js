@@ -16,7 +16,6 @@ Page({
   },
   uid:0,
   replyObj:{},
-
   handlewrite(){
     this.setData({
       isshow:!this.data.isshow,
@@ -32,16 +31,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    //console.log(options);
-    let {uid,time} = options
+    var timestamp = Date.parse(new Date());  
+    timestamp = timestamp / 1000;  
+    let {uid} = options
     this.uid = uid
     wx.setStorageSync('uid', uid)
-    this._getDetail(uid,time)
+    this._getDetail(uid,timestamp)
     this.getcomment(uid)
   },
-  _getDetail(id,time){
+  _getDetail(id,timestamp){
    // console.log('请求了');
-    detail(id,time).then(res=>{
+    detail(id,timestamp).then(res=>{
       this.setData({
         detail:res.data.data
       })
@@ -172,7 +172,9 @@ Page({
     let timestamp = Date.parse(new Date());
     timestamp = timestamp / 1000;
     leave(this.uid,timestamp).then(res=>{
-      if(res.data.code === 200){
+      console.log(res.data);
+      if(res.data.code === 204){
+        console.log('shijian');
         wx.showToast({
           title:res.data.msg
         })

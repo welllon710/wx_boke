@@ -5,6 +5,6 @@
   },
   "navigationBarTitleText": "栏目分类",
   "enablePullDownRefresh":true,
-  "onReachBottomDistance":100,
+  "onReachBottomDistance":50,
   "backgroundTextStyle": "dark"
 }

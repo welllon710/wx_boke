@@ -1,6 +1,7 @@
 <!--components/cate_content/cate_item.wxml-->
 <wxs src="../../pages/home/child/pub_content/time.wxs" module="time"></wxs>
-<navigator class="article_item" url="/pages/detail/detail?uid={{list.id}}&time={{time.msg}}" >
+<navigator class="article_item" url="/pages/detail/detail?uid={{list.id}}" >
+
   <view class="left">
     <image src="../../static/cate/cat.jpg" class="img"></image>
     <!-- <view class="img"></view> -->

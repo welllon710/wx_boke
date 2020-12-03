@@ -8,14 +8,12 @@ Component({
       type:Object
     }
   },
-
   /**
    * 组件的初始数据
    */
   data: {
-
+    Timestamp:''
   },
-
   /**
    * 组件的方法列表
    */

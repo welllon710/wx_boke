@@ -115,19 +115,16 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    console.log('吃滴');
+
     //下拉下一页
-    console.log(this.page,this.total);
-    
     if(this.page < this.last_page){
-     
-     console.log('还有下一页');
      this.page++
      this._getArticle(this.data.cate_id,this.page)
     }else{
-      console.log('meiyu');
       wx.showToast({
         title: '没有下一页了哦',
+        duration:2000,
+        mask:true
       })
     }
   },

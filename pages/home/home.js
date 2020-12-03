@@ -14,10 +14,6 @@ Page({
   },
   getUser(e){
      const {userInfo} = e.detail
-    // wx.setStorageSync('userinfo', userInfo)
-    // this.setData({
-    //   userinfo:userInfo
-    // })
     let user = {
       nickname:userInfo.nickName,
       gender:userInfo.gender,
@@ -46,6 +42,7 @@ Page({
       todayPub:data.data,
       index:Number(e.detail)
     })
+    wx.setStorageSync('mypub', data.data)
     if (data.code === 400) {
       wx.showToast({
         title: data.msg,
@@ -57,7 +54,7 @@ Page({
   },
   async record(e){
     if (wx.getStorageSync('userinfo')) {
-    const {data} = await read();
+    const {data} = await read(wx.getStorageSync('openid'));
     this.setData({
       index:Number(e.detail),
       todayRead:data.data
@@ -96,18 +93,18 @@ Page({
       this.setData({
         userinfo
       })
-      if (wx.getStorageSync('mypub')) {
-        this.setData({
-          todayPub:wx.getStorageSync('mypub')
-        })
-      }else{
-         pub().then(({data})=>{
+      if(!wx.getStorageSync('mypub')){
+      pub(wx.getStorageSync('openid')).then(({data})=>{
         this.setData({
           todayPub:data.data
         })
         wx.setStorageSync('mypub', data.data)
       })
-      }
+    }else{
+      this.setData({
+        todayPub:wx.getStorageSync('mypub')
+      })
+    }
     }
   },
 

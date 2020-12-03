@@ -24,7 +24,7 @@ export function detail(uid,time){
     data:{
       uid,
       time,
-    //  openid:wx.getStorageSync('openid')||''
+      openid:wx.getStorageSync('openid')||''
      // openid:''
     }
   })

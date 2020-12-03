@@ -2,19 +2,21 @@
 .reply{
   margin-top: 30rpx;
   width: 100%;
- position: relative;
+  position: relative;
+  font-size: 24rpx;
 }
 .text{
   height: 100%;
-  background-color: #d0d0d0;
+  background-color: #E0E0E0;
   margin-bottom: 10rpx;
   border-radius: 20rpx;
-  padding: 12rpx 20rpx;
-  width: 470rpx;
+  padding: 11rpx 80rpx 11rpx 16rpx;
+  width: 450rpx;
 }
 .item_reply{
   position: absolute;
- right: 105rpx;
+  right: 60rpx;
   top: 10rpx;
   z-index: 20;
+  color: #004B97;
 }
