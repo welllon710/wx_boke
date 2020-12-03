@@ -120,7 +120,7 @@ Page({
      this.replyObj = {
       wid:item.wx_id, //对方id
       cid:item.id, //评论id
-     // pname:item.nickname //对方名字
+      pname:item.nickname //对方名字
       // uid,//文章id
       // myid,//我的id
       // myname //我的用户名

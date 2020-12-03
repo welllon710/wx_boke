@@ -1,10 +1,9 @@
 <!--components/problem/problem.wxml-->
 <view class="problem">
-
 <block wx:for="{{list}}" wx:key="{{index}}">
-
  <view class="title">问:{{item.problem}}</view>
-<rich-text nodes="{{item.answer}}" class="content"></rich-text>
-
+ <view class="content_box">
+  <rich-text nodes="{{item.answer}}" class="content"></rich-text>
+ </view>
 </block>
 </view>

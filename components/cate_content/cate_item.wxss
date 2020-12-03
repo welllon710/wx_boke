@@ -28,5 +28,5 @@
 }
 .article_item .right .r_time {
   position: relative;
-  top: 94rpx;
+  top: 52rpx;
 }

@@ -1,5 +1,5 @@
 <!--components/my_input/my_input.wxml-->
 <view class="my_input">
   <h5>{{title}}:</h5>
-  <input type="text" placeholder="{{title}}" class="input_item" name="{{name}}"/>
+  <input type="text" placeholder="{{title}}" class="input_item" name="{{name}}" />
 </view>

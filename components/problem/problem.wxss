@@ -6,6 +6,9 @@
   text-overflow: ellipsis;
   word-wrap: break-word;
 }
+.content_box{
+  padding: 0 20rpx;
+}
 .content{
   text-overflow: ellipsis;
   word-wrap: break-word;

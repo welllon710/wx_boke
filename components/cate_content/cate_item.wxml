@@ -2,15 +2,15 @@
 <wxs src="../../pages/home/child/pub_content/time.wxs" module="time"></wxs>
 <navigator class="article_item" url="/pages/detail/detail?uid={{list.id}}&time={{time.msg}}" >
   <view class="left">
-    <!-- <image src=""></image> -->
-    <view class="img"></view>
+    <image src="../../static/cate/cat.jpg" class="img"></image>
+    <!-- <view class="img"></view> -->
   </view>
   <view class="right">
     <view class="r_title">
-      {{list.title}}
+     标题： {{list.title}}
     </view>
     <view class="r_time">
-      {{list.create_time}}
+    发布时间：{{time.timestampToTime(list.create_time)}}
     </view>
   </view>
 </navigator>

@@ -19,9 +19,11 @@ bindreset="formReset"
 </view>
 <!-- 富文本 -->
 <h5>内容:</h5>
-<textarea class="_text" maxlength="-1" name="content"
+<view class="_content">
+  <textarea class="_text" maxlength="-1" name="content"
 placeholder="就在这里写你的心得吧"
 ></textarea>
+</view>
 <!-- 按钮 -->
 <button type="primary" class="my_button" form-type="submit"> 提交</button>
 <button type="primary" class="my_button" form-type="reset">重置</button>

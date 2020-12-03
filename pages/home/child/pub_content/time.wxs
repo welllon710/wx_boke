@@ -5,11 +5,12 @@
   var date = getDate(timestamp * 1000);//时间戳为10位需*1000
   var Y = date.getFullYear() + '-';
   var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
-  var D = date.getDate() + ' ';
-  var h = date.getHours() + ':';
-  var m = date.getMinutes() + ':';
-  var s = date.getSeconds();
+  var D = (date.getDate() < 10? '0'+(date.getDate()): date.getDate()) + ' ';
+  var h = (date.getHours() < 10? '0'+(date.getHours()) : date.getHours()) + ':';
+  var m = (date.getMinutes() < 10? '0'+(date.getMinutes()): date.getMinutes()) + ':';
+  var s = (date.getSeconds() < 10? '0'+(date.getSeconds()):date.getSeconds());
   return Y + M + D + h + m + s;
+ //return Y + M + D + h + s;
 }
 
 module.exports.msg = Math.round(getDate().getTime() / 1000) //当前时间戳
@@ -33,6 +34,7 @@ module.exports._time = function(arr){  //计算当天发布
  }
 return num
 }
+
 
 
 

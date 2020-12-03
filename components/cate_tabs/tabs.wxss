@@ -1,9 +1,9 @@
 /* components/cate/tabs.wxss */
 .tabs{
-  height:80rpx;
+  height:95rpx;
 }
 .tab-h {
-  height: 80rpx;
+  height: 95rpx;
   width: 100%;
    box-sizing: border-box;
    overflow: hidden;
@@ -17,9 +17,9 @@
   }
   
 .tab-h .tab-item {
-  line-height: 90rpx;
+  line-height: 95rpx;
   text-align: center;
-  margin: 0 30rpx;
+ padding: 0 40rpx;
  color:#293a46;
 }
 .tab-item.active{
