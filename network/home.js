@@ -1,17 +1,21 @@
 import request from "./network.js";
 import BaseUrl from "./baseurl.js";
-// const BaseUrl = 'http://42.192.92.208:90/api'
-// //const BaseUrl = 'http://127.0.0.1:8000/api'
-export function pub(){
+
+export function pub(code){
   return request({
-    url:BaseUrl+'/wx',
-    // data:{
-    //   code:wx.getStorageSync('openid')
-    // }
+    url:BaseUrl+'/wx/pub',
+    method:'post',
+    data:{
+      code
+    }
   })
 }
-export function read(){
+export function read(code){
   return request({
+    method:'post',
     url:BaseUrl+"/wx/read",
+    data:{
+      code
+    }
   })
 }

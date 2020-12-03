@@ -10,7 +10,7 @@ Page({
     userinfo:wx.getStorageSync('userinfo')||[],
     todayPub:[],
     todayRead:[],
-    index:0
+    index:0,
   },
   getUser(e){
      const {userInfo} = e.detail
@@ -41,21 +41,34 @@ Page({
   },
   async pub(e){
     if (wx.getStorageSync('userinfo')) {
-    const {data} = await pub();
+    const {data} = await pub(wx.getStorageSync('openid'));
     this.setData({
       todayPub:data.data,
       index:Number(e.detail)
     })
+    if (data.code === 400) {
+      wx.showToast({
+        title: data.msg,
+        duration:2000,
+        mask:true
+      })
+    }
   }
   },
   async record(e){
     if (wx.getStorageSync('userinfo')) {
-    console.log('yuedu');
     const {data} = await read();
     this.setData({
       index:Number(e.detail),
       todayRead:data.data
     })
+    if (data.code === 400) {
+      wx.showToast({
+        title: data.msg,
+        duration:2000,
+        mask:true
+      })
+    }
   }
     
   },
