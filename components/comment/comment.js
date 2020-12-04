@@ -7,7 +7,11 @@ Component({
     commentList:{
       type:Array
     },
+    total:{
+      type:Number
+    }
   },
+
   /**
    * 组件的初始数据
    */
@@ -18,7 +22,6 @@ Component({
   pageLifetimes:{
     show: function() {
       // 页面被展示
-      console.log('展示');
       this.setData({
         avatar:wx.getStorageSync('userinfo').avatarurl,
       })
@@ -27,6 +30,7 @@ Component({
   /**
    * 组件的方法列表
    */
+  
   methods: {
    // userinfo:wx.getStorageSync('userinfo'),
     handlewtite(){

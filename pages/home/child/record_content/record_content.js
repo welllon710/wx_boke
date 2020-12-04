@@ -5,7 +5,7 @@ Component({
    */
   properties: {
     list:{
-      type:Object
+      type:Array
     },
     order:{
       type:Number
@@ -22,6 +22,12 @@ Component({
   /**
    * 组件的方法列表
    */
+  pageLifetimes:{
+    show(){
+      console.log(this.list);
+      
+    }
+  },
   methods: {
 
   }

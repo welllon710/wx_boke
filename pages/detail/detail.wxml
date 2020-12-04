@@ -18,7 +18,7 @@ bind:write="handlewrite"
 bind:reply="handlereply"
 bind:itemreply="itemhandlereply"
 commentList="{{commentList}}"
-
+total="{{totals}}"
  ></comment>
 <!-- 发送评论 -->
 <write wx:if="{{isshow}}" 

@@ -1,5 +1,5 @@
 <!--components/comment/comment.wxml-->
-<text>精彩评论(1)</text>
+<text>精彩评论({{total}})</text>
 <view class="comment_input">
   <image class="avatar" src="{{avatar}}"></image>
   <image class="pencil" src="../../static/comment/pencil.png"></image>

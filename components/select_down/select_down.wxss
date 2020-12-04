@@ -22,6 +22,7 @@
   margin: 0 auto;
   border-top-left-radius: 10rpx;
   border-top-right-radius: 10rpx;
+  padding: 0 20rpx;
 }
 text{
   line-height: 80rpx;
@@ -40,6 +41,8 @@ text{
   height: 80rpx;
   width: 100%;
   line-height: 80rpx;
+  padding: 0 20rpx;
+  font-size: 36rpx;
  
 }
 .active{

@@ -11,10 +11,12 @@ Page({
       detail:{},
       isshow:false,//写评论的框
       isSend:true,
+      totals:0,
       osidename:'',
       commentList:[]
   },
   uid:0,
+  total:0,//评论计数
   replyObj:{},
   handlewrite(){
     this.setData({
@@ -48,12 +50,27 @@ Page({
     })
   },
   getcomment(uid){ //获取评论
+  
     getcomment(uid).then(res=>{
-      console.log(res);
+      console.log(res.data.data);
+      let total = this.count(res.data.data)
+      console.log(total);
+      
       this.setData({
-        commentList:res.data.data
+        commentList:res.data.data,
+        totals:total
       })
     })
+  },
+  //递归
+  count(arr){
+    arr.map(item=>{
+     this.total++
+      if(item.child.length!==0){
+        this.count(item.child)
+      }
+    })
+    return this.total
   },
   handlemsg(e){
     //发送评论
