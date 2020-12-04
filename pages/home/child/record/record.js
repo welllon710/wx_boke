@@ -18,7 +18,7 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    handlejump(e){
+    handlejump(e){  //切换我的发布与我的阅读
       let {index} = e.currentTarget.dataset
       this.setData({
         current:index

@@ -9,7 +9,7 @@ Page({
   data: {
     cateList:[]
   },
-  formSubmit(e){
+  formSubmit(e){ //提交要发表的文章
     let {value} = e.detail
     value['myid'] = wx.getStorageSync('userinfo').id
     saveArticle(value).then(res=>{
@@ -36,7 +36,7 @@ Page({
   onLoad: function (options) {
     this._getCate()
   },
-  _getCate(){
+  _getCate(){ //获取下拉分类
     getCate().then(res=>{
       console.log(res);
       this.setData({

@@ -1,15 +1,13 @@
 import request from "./network.js";
 import BaseUrl from "./baseurl.js";
-// const BaseUrl = 'http://42.192.92.208:90/api'
-// //const BaseUrl = 'http://127.0.0.1:8000/api'
-export function saveArticle(data){
+export function saveArticle(data){ //写文章
   return request({
     method:'post',
     url:BaseUrl+'/article',
     data,
   })
 }
-export function show(id,page=1){
+export function show(id,page=1){ 
   return request({
     url:BaseUrl+'/article/'+id,
     data:{

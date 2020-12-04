@@ -10,20 +10,21 @@ Page({
     cateList:[],
     contentList:[],
     Currently:'',
-    cate_id:6 //当前分类
+    cate_id:6 //当前分类,用作第一个页的缓存
 
   },
   last_page:1,//总页数
   page:1, //当前页码
-  cate(e){
+  cate(e){  //点击分类切换内容
     let {id} = e.detail.cate
-    console.log(id);
+   // console.log(id);
+    this.setData({
+      contentList:[]
+    })
+    this.page = 1
     this._getArticle(id,this.page)
   },
-  get_detail(){
-    console.log('是否约等于');
-    
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -49,20 +50,21 @@ Page({
     }
     this._getArticle(this.data.cate_id,this.page)
   },
-  _getCate(){
+  _getCate(){  //获取tabs分类
     getCate().then(res=>{
       wx.setStorageSync('cate', {time:Date.now(),data:res.data.data})
       this.setData({
-        cateList:res.data.data
+        cateList:res.data.data,
+
       })
     })
   },
-  _getArticle(id,page){
+  _getArticle(id,page){  //根据分类请求内容
     show(id,page).then(res=>{
       this.tatal =  res.data.data.last_page,
       this.page = res.data.data.current_page
       this.setData({
-        contentList:res.data.data.data
+        contentList:[...this.data.contentList,...res.data.data.data]
       })
       wx.stopPullDownRefresh();
     })
@@ -102,7 +104,6 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-      console.log('下拉');
       //清空数据，重置页码，重新请求，关闭效果
       this.setData({
         contentList:[]
@@ -117,7 +118,7 @@ Page({
   onReachBottom: function () {
 
     //下拉下一页
-    if(this.page < this.last_page){
+    if(this.page <= this.last_page){
      this.page++
      this._getArticle(this.data.cate_id,this.page)
     }else{

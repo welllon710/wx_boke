@@ -16,8 +16,8 @@ Component({
    * 组件的初始数据
    */
   data: {
-    val:'',
-    emojj:[
+    val:'',  //评论框内容
+    emojj:[  //评论框表情
       {
         id:1,
         char:'😰'
@@ -60,7 +60,7 @@ Component({
     handlecancer(){
       this.triggerEvent('cencel')
     },
-    inputedit(e){
+    inputedit(e){ //评论框数据绑定
       let {value} = e.detail
       let {name} = e.currentTarget.dataset
       this.data[name] = value
@@ -69,9 +69,7 @@ Component({
       })
     },
     tapemojj(e){
-      
       let i = e.detail
-
       this.setData({
         val:this.data.val+this.data.emojj[i].char
       })

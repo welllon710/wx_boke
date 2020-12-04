@@ -8,23 +8,23 @@ Page({
    */
   data: {
       select:false,
-      detail:{},
+      detail:{},//文章内容
       isshow:false,//写评论的框
-      isSend:true,
-      totals:0,
-      osidename:'',
-      commentList:[]
+      isSend:true,//判断是回复，还是发送
+      totals:0,//当前评论数量
+      osidename:'',//对方昵称
+      commentList:[]//评论列表
   },
   uid:0,
   total:0,//评论计数
   replyObj:{},
-  handlewrite(){
+  handlewrite(){  //打开评论框
     this.setData({
       isshow:!this.data.isshow,
       isSend:true,
     })
   },
-  handlecencel(){
+  handlecencel(){ //关闭评论框
     this.setData({
       isshow:false
     })
@@ -41,7 +41,7 @@ Page({
     this._getDetail(uid,timestamp)
     this.getcomment(uid)
   },
-  _getDetail(id,timestamp){
+  _getDetail(id,timestamp){ //携带时间戳请求内容
    // console.log('请求了');
     detail(id,timestamp).then(res=>{
       this.setData({
@@ -62,7 +62,7 @@ Page({
       })
     })
   },
-  //递归
+  //递归计算评论数量
   count(arr){
     arr.map(item=>{
      this.total++
@@ -144,7 +144,7 @@ Page({
     }
    
   },
-  itemhandlereply(e){
+  itemhandlereply(e){//回复二级以上评论
     let item = e.detail
     this.setData({
       isshow:true,

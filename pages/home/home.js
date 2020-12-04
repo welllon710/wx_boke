@@ -12,7 +12,7 @@ Page({
     todayRead:[],
     index:0,
   },
-  getUser(e){
+  getUser(e){ //获取个人信息
      const {userInfo} = e.detail
     let user = {
       nickname:userInfo.nickName,
@@ -21,7 +21,7 @@ Page({
       country:userInfo.country,
       openid:wx.getStorageSync('openid')
     }
-    saveUser(user).then(res=>{
+    saveUser(user).then(res=>{ //发送个人信息到数据库
       this.setData({
         userinfo:res.data.data
       })
@@ -35,7 +35,7 @@ Page({
       })
     })
   },
-  async pub(e){
+  async pub(e){  //我的发布
     if (wx.getStorageSync('userinfo')) {
     const {data} = await pub(wx.getStorageSync('openid'));
     this.setData({
@@ -52,7 +52,7 @@ Page({
     }
   }
   },
-  async record(e){
+  async record(e){  //我的阅读
     if (wx.getStorageSync('userinfo')) {
     const {data} = await read(wx.getStorageSync('openid'));
     this.setData({
@@ -87,7 +87,7 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function () {  //页面缓存我的发布
     const userinfo = wx.getStorageSync('userinfo')
     if (userinfo) {
       this.setData({
