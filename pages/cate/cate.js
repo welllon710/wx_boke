@@ -10,7 +10,7 @@ Page({
     cateList:[],
     contentList:[],
     Currently:'',
-    cate_id:6 //当前分类,用作第一个页的缓存
+    cate_id:6 //第一页的分类，用于缓存
 
   },
   last_page:1,//总页数
@@ -19,7 +19,8 @@ Page({
     let {id} = e.detail.cate
    // console.log(id);
     this.setData({
-      contentList:[]
+      contentList:[],
+      cate_id:id
     })
     this.page = 1
     this._getArticle(id,this.page)
@@ -108,6 +109,8 @@ Page({
       this.setData({
         contentList:[]
       })
+      //console.log('ces');
+      
       this.page = 1
       this._getArticle(this.data.cate_id,this.page)
   },
