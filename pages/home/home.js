@@ -1,13 +1,13 @@
 // pages/home/home.js
 import { saveUser } from "../../network/wxlogin";
-import { pub,read } from "../../network/home";
+import { pub,read,leavelogin } from "../../network/home";
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    userinfo:wx.getStorageSync('userinfo')||[],
+    userinfo:[],
     todayPub:[],
     todayRead:[],
     index:0,
@@ -22,17 +22,40 @@ Page({
       openid:wx.getStorageSync('openid')
     }
     saveUser(user).then(res=>{ //发送个人信息到数据库
+      console.log(res);
       this.setData({
         userinfo:res.data.data
       })
       wx.setStorageSync('userinfo', res.data.data)
-      pub().then(({data})=>{
+      pub(wx.getStorageSync('openid')).then(({data})=>{
       wx.setStorageSync('mypub', data.data)
         this.setData({
           todayPub:data.data
         })
         
       })
+    })
+  },
+  leavelogin(){
+    const id = wx.getStorageSync('userinfo').id
+    wx.showModal({
+      title:'提示',
+      content:'您确定要退出吗？',
+      success: (res)=> {
+        if (res.confirm) {
+        leavelogin(id).then(res=>{
+          if (res.data.code === 200) {
+            this.setData({
+              userinfo:[],
+              todayPub:[],
+              todayRead:[]
+            })
+            wx.setStorageSync('userinfo', null)
+            wx.setStorageSync('mypub', [])
+          }
+        })
+        } 
+        }
     })
   },
   async pub(e){  //我的发布
@@ -89,6 +112,7 @@ Page({
    */
   onShow: function () {  //页面缓存我的发布
     const userinfo = wx.getStorageSync('userinfo')
+    console.log('XIANSHI');
     if (userinfo) {
       this.setData({
         userinfo

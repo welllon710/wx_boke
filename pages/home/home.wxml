@@ -4,7 +4,7 @@
     <image class="user_bg" src="{{userinfo.avatarurl}}" ></image>
 
     <view class="user_info">
-      <image class="user_icon" src="{{userinfo.avatarurl}}" ></image>
+      <image class="user_icon" src="{{userinfo.avatarurl}}" bindtap="leavelogin"></image>
       <view class="user_name">
       {{userinfo.nickname}}
       </view>

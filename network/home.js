@@ -19,3 +19,9 @@ export function read(code){
     }
   })
 }
+export function leavelogin(id){
+  return request({
+    method:'DELETE',
+    url:BaseUrl+"/wx/delete/"+id,
+  })
+}
