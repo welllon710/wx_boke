@@ -1,8 +1,20 @@
 <!--components/reply/reply.wxml-->
-<view class="reply" wx:for="{{comment_item}}" wx:key="{{index}}">
+<view class="reply" wx:for="{{comment_item}}" wx:key="{{index}}" 
+>
+ <view>
   <textarea class="text" disabled>
   {{item.nickname}}@{{item.parent_name}}：{{item.content}}
   </textarea>
-  <view class="item_reply" bindtap="itemreply" data-item="{{item}}">回复</view>
-  <reply-item comment_item="{{item.child}}"  bind:itemreply="itemreply" data-item="{{item}}"></reply-item>
+  <view class="item_reply"
+  catchtap="itemreply"
+  data-item="{{item}}"
+  >回复</view>
+ </view>
+
+ <reply-items comment_item="{{item.child}}"  
+ catch:itemreplys="itemreplysec"
+  >
+  </reply-items>
+
 </view>
+

@@ -22,8 +22,22 @@ Component({
    */
   methods: {
     itemreply(e){
-      let {item} = e.currentTarget.dataset
-      this.triggerEvent('itemreply',item)
+     
+      try {
+        let item = e.currentTarget.dataset.item ? e.currentTarget.dataset.item : e.detail
+        //let item = e.currentTarget.dataset.item ? e.currentTarget.dataset.item: 'wu'
+       this.triggerEvent('itemreplys',item)
+      } catch (error) {
+        console.log(error);
+        
+      }
+
+
+      
+    },
+    itemreplysec(e){
+      let {item} = e.detail
+      this.itemreply(e)
     }
   }
 })

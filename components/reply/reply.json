@@ -1,6 +1,6 @@
 {
   "component": true,
   "usingComponents": {
-    "reply-item":"../reply/reply"
+    "reply-items":"../reply/reply"
   }
 }

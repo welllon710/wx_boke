@@ -40,7 +40,8 @@
 <view class="reply">
   <reply_item 
   comment_item="{{item.child}}"
-  bind:itemreply="itemreply"></reply_item>
+  catch:itemreplys="itemreply"
+ ></reply_item>
 </view>
 </view>
 </block>
