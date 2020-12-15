@@ -1,10 +1,15 @@
 
+.problem_item{
+  padding: 0 20rpx;
+  height: 100%;
+  border-radius: 20rpx;
+  box-shadow: 0 5rpx 30rpx #91b87d;
+  margin: 20rpx 0;
+  background-color: #f6f8fa;
+}
 .title{
-  font-size: 40rpx;
-  color: red;
-  padding: 0 10rpx;
-  text-overflow: ellipsis;
-  word-wrap: break-word;
+  font-size: 30rpx;
+  color: #d0d0d0;
 }
 .content_box{
   padding: 0 20rpx;
@@ -12,4 +17,32 @@
 .content{
   text-overflow: ellipsis;
   word-wrap: break-word;
+}
+.select{
+  height: 70rpx;
+  line-height: 70rpx;
+  padding: 0 20rpx;
+  border: 2rpx solid black;
+  position: relative;
+}
+.select::after{
+  position: absolute;
+  right:10rpx ;
+  top: 14rpx;
+      content: '';
+      border-top: 23rpx solid transparent;
+      border-bottom: 23rpx solid transparent;
+      border-left: 35rpx solid #f00;
+}
+.active::after{
+  position: absolute;
+  right:10rpx;
+  top: 14rpx;
+  transform: rotate(2deg);
+  transition: all .3s;
+  transform-origin: center center;
+      content: '';
+      border-left: 23rpx solid transparent;
+      border-right: 23rpx solid transparent;
+      border-top: 35rpx solid #f00;
 }

@@ -25,6 +25,9 @@ Page({
     getProblem(id,page).then(res=>{
      this.total = res.data.data.last_page //总页数
      this.page = res.data.data.current_page //当前页
+     res.data.data.data.map(item=>{
+       item.isActive = false
+     })
       this.setData({
         problemList: [...this.data.problemList,...res.data.data.data],
       })
@@ -48,6 +51,15 @@ Page({
     this.page = 1 //重置页码
     this._getProblem(id)
     
+  },
+  changindex(e){
+    let index = e.detail
+    let {problemList} = this.data
+    let proid = problemList.findIndex(item=>item.id===index)
+    problemList[proid].isActive = !problemList[proid].isActive
+    this.setData({
+      problemList
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

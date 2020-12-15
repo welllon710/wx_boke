@@ -1,9 +1,20 @@
 <!--components/problem/problem.wxml-->
+
 <view class="problem">
 <block wx:for="{{list}}" wx:key="{{index}}">
- <view class="title">问:{{item.problem}}</view>
+ <view class="problem_item">
+  <rich-text class="title" nodes="问：{{item.problem}}"></rich-text>
+ </view>
+ <view class="answer">
+  <rich-text class="title" nodes="{{item.answer}}"></rich-text>
+ </view>
  <view class="content_box">
-  <rich-text nodes="{{item.answer}}" class="content"></rich-text>
+  <view class="select {{item.isActive? 'active':''}}" wx:if="show"
+   bindtap="cartoons"
+  data-index="{{item.id}}">答案解析</view>
+  <view class="analysis" wx:if="{{item.isActive}}">
+    <rich-text nodes="{{item.analysis}}" class="content"></rich-text>
+  </view>
  </view>
 </block>
 </view>
