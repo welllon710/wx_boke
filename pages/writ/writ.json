@@ -3,5 +3,5 @@
     "my-input":"/components/my_input/my_input",
     "select-down":"/components/select_down/select_down"
   },
-  "navigationBarTitleText": "文章"
+  "navigationBarTitleText": "写一写"
 }

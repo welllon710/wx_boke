@@ -1,5 +1,5 @@
 page{
-  background-color: #F0FFF0;
+  background-color: #F0F0F0;
 }
 .content{
   padding: 0 20rpx;

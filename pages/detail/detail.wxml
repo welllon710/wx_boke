@@ -8,7 +8,7 @@
  <view class="desc">简介概要：{{detail.desc}}</view>
 
   <text class="time">发布时间：{{time.timestampToTime(detail.create_time)}}</text>
-  <view class="text">
+  <view class="text_content">
     <rich-text nodes="{{detail.content}}" class="content"></rich-text>
   </view>
  <!-- 评论表 -->

@@ -3,7 +3,7 @@
     "tabs":"../../components/cate_tabs/tabs",
     "content":"../../components/cate_content/cate_item"
   },
-  "navigationBarTitleText": "栏目分类",
+  "navigationBarTitleText": "读一读",
   "enablePullDownRefresh":true,
   "onReachBottomDistance":50,
   "backgroundTextStyle": "dark"

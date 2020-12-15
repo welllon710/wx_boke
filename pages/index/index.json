@@ -3,7 +3,7 @@
     "cate-tabs":"/components/cate_tabs/tabs",
     "problem":"/components/problem/problem"
   },
-  "navigationBarTitleText": "首页",
+  "navigationBarTitleText": "测一测",
   "enablePullDownRefresh":true,
   "onReachBottomDistance":50,
   "backgroundTextStyle": "dark"

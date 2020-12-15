@@ -12,42 +12,41 @@ page{
 .detail{
   position: relative;
   height: 100%;
+  font-size: 30rpx;
 }
 text{
   display: inline-block;
+  margin-top: 20rpx;
 }
 .title_tags{
   display: flex;
 }
 .title{
   font-size: 50rpx;
+  flex: 5;
   color: darkslategray;
   padding: 0 15rpx;
 }
 .tags{
-  font-size: 34rpx;
+  flex: 3;
   color: darkslategray;
-  padding: 25rpx 60rpx;
+  position: relative;
+  top: 30rpx;
 }
 .desc{
-  font-size: 36rpx;
   padding: 0 25rpx;
 }
 .time{
-  font-size: 34rpx;
-  color: darkslategray;
-  padding: 10rpx 26rpx;
-}
-.content{
- font-size: 34rpx;
-
+  padding: 5rpx 26rpx;
 }
 .comm{
   font-size: 50rpx;
   border-top: 2rpx solid black;
   padding-top: 12rpx;
-  margin-top: 120rpx;
+  margin-top: 20rpx;
 }
-.text{
+.text_content{
   padding: 0 20rpx;
+  border-top: 2rpx solid black;
+  padding: 15rpx;
 }
